@@ -99,6 +99,4 @@ Dashboards cover:
 - Actual vs predicted revenue for the test period
 - 3-month forward revenue forecast with annotated values
 
-Tableau Public link — [Add link]
-
 ---
