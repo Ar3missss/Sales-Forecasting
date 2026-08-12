@@ -18,6 +18,14 @@ import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import streamlit as st
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        .stApp { padding-top: 2rem; }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.set_page_config(page_title="Sales Forecasting Dashboard", page_icon="📈", layout="wide")
 
