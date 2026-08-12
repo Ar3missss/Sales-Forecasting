@@ -18,6 +18,11 @@ import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import streamlit as st
+
+# 1. THIS MUST BE THE FIRST STREAMLIT COMMAND
+st.set_page_config(page_title="Sales Forecasting Dashboard", page_icon="📈", layout="wide")
+
+# 2. NOW we can add the CSS to hide Streamlit's default chrome for embedding
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
@@ -26,8 +31,6 @@ st.markdown("""
         .stApp { padding-top: 2rem; }
     </style>
     """, unsafe_allow_html=True)
-
-st.set_page_config(page_title="Sales Forecasting Dashboard", page_icon="📈", layout="wide")
 
 # ------------------------------------------------------------------
 # Load + prepare data (cached so it only runs once)
