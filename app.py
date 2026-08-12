@@ -148,15 +148,18 @@ fig.add_trace(go.Scatter(
     x=bridge_x, y=bridge_y,
     mode="lines", name="Forecast Bridge", line=dict(color="#E50914", dash="dash", width=2)
 ))
+# Changed to lines+markers (removed text) to stop numbers from overlapping
 fig.add_trace(go.Scatter(
     x=future_dates, y=future_pred,
-    mode="lines+markers+text", name="Forecast",
-    text=[f"${v:,.0f}" for v in future_pred], textposition="top center",
-    line=dict(color="#E50914", width=2)
+    mode="lines+markers", name="Forecast",
+    line=dict(color="#E50914", width=2),
+    hovertemplate='<b>%{x|%b %Y}</b><br>Predicted: $%{y:,.2f}<extra></extra>'
 ))
 fig.update_layout(
     xaxis_title="Month", yaxis_title="Revenue ($)",
-    hovermode="x unified", height=480, legend=dict(orientation="h", y=1.08)
+    hovermode="x unified", height=450, 
+    legend=dict(orientation="h", y=1.12, x=0.5, xanchor="center"),
+    margin=dict(l=20, r=20, t=40, b=20) # Tighter margins so it fits in the iframe better
 )
 st.plotly_chart(fig, use_container_width=True)
 
